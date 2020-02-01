@@ -50,8 +50,9 @@ class Node {
   
   
   // root
-  let plusNode = Node(operation: "+", value: nil, leftChild: sixNode, rightChild: fiveNode)
-  
+
+  let plusRootNode = Node(operation: "+", value: nil, leftChild: multiplyNode, rightChild: fiveNode)
+
 
 // 6 + 5
 
@@ -66,9 +67,14 @@ func evaluate(node: Node) -> Float {
     }
     
     if node.operation == "+"{
-        return node.leftChild!.value! + node.rightChild!.value!
+        // apply recursion
+        return evaluate(node: node.leftChild!) + evaluate(node: node.rightChild!)
     }
     
+    if node.operation == "*"{
+         // apply recursion
+         return evaluate(node: node.leftChild!) * evaluate(node: node.rightChild!)
+     }
   
     
     return 0
@@ -77,5 +83,5 @@ func evaluate(node: Node) -> Float {
 }
 
 
-print(evaluate(node: plusNode))
+print(evaluate(node: plusRootNode))
 
