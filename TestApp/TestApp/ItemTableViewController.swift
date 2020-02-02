@@ -49,6 +49,26 @@ var items = [Item]()
         return cell
     }
     
+    
+    
+    @IBAction func unwindToList(sender: UIStoryboardSegue){
+        
+        let srcViewCon =  sender.source as? ViewController
+        
+        let item = srcViewCon?.item
+        if (srcViewCon != nil && item?.name != ""){
+            // Add item
+            let newIndexPath = IndexPath(row: items.count, section: 0)
+            items.append(item!)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            
+            
+            
+        }
+        
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-ol-PDB">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-ol-PDB">
                                 <rect key="frame" x="0.0" y="148" width="414" height="66.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c74-3q-IHk" userLabel="Name">
@@ -25,32 +25,41 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What needs to be done?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jg1-Y2-nyW">
-                                        <rect key="frame" x="0.0" y="32.5" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="185.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="jg1-Y2-nyW" secondAttribute="trailing" id="7oK-Pw-zLF"/>
-                                    <constraint firstItem="jg1-Y2-nyW" firstAttribute="leading" secondItem="YWt-ol-PDB" secondAttribute="leadingMargin" id="sAB-Kh-whS"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWt-ol-PDB" secondAttribute="trailing" id="kmu-Ij-orf"/>
-                            <constraint firstItem="YWt-ol-PDB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nwP-tj-Zm2"/>
-                            <constraint firstItem="YWt-ol-PDB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="ss2-IZ-enu"/>
+                            <constraint firstItem="YWt-ol-PDB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="JgA-bz-W8C"/>
+                            <constraint firstItem="YWt-ol-PDB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gH9-Mi-H7d"/>
+                            <constraint firstItem="YWt-ol-PDB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="shh-Pj-qXT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="a4I-Wi-40c"/>
+                    <navigationItem key="navigationItem" title="New Item" id="a4I-Wi-40c">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HJF-KR-Sek">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="ae4-xG-TLE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="keP-0n-7XT">
+                            <connections>
+                                <segue destination="QDX-ZP-W0t" kind="unwind" unwindAction="unwindToListWithSender:" id="JG1-Cv-TDK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="c74-3q-IHk" id="fCR-e2-zxz"/>
                         <outlet property="nameTextField" destination="jg1-Y2-nyW" id="XZ9-9r-yFn"/>
+                        <outlet property="saveButton" destination="keP-0n-7XT" id="JK9-cL-uXR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="QDX-ZP-W0t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1379.7101449275362" y="73.660714285714278"/>
         </scene>
