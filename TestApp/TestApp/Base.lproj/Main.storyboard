@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q0I-et-KSi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BJe-tr-RgG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-ol-PDB">
-                                <rect key="frame" x="0.0" y="104" width="414" height="108.5"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="66.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c74-3q-IHk" userLabel="Name">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
@@ -29,18 +29,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7d-hm-gyr" userLabel="Submit">
-                                        <rect key="frame" x="0.0" y="78.5" width="414" height="30"/>
-                                        <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Save Item"/>
-                                        <connections>
-                                            <action selector="setLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3j2-Uc-aj8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="jg1-Y2-nyW" secondAttribute="trailing" id="7oK-Pw-zLF"/>
-                                    <constraint firstItem="r7d-hm-gyr" firstAttribute="trailing" secondItem="jg1-Y2-nyW" secondAttribute="trailing" id="dlt-L0-use"/>
                                     <constraint firstItem="jg1-Y2-nyW" firstAttribute="leading" secondItem="YWt-ol-PDB" secondAttribute="leadingMargin" id="sAB-Kh-whS"/>
                                 </constraints>
                             </stackView>
@@ -53,6 +44,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="a4I-Wi-40c"/>
                     <connections>
                         <outlet property="nameLabel" destination="c74-3q-IHk" id="fCR-e2-zxz"/>
                         <outlet property="nameTextField" destination="jg1-Y2-nyW" id="XZ9-9r-yFn"/>
@@ -60,24 +52,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="132"/>
+            <point key="canvasLocation" x="1379.7101449275362" y="73.660714285714278"/>
         </scene>
-        <!--Table View Controller-->
+        <!--ToDo Items-->
         <scene sceneID="093-dF-fy6">
             <objects>
-                <tableViewController id="q0I-et-KSi" sceneMemberID="viewController">
+                <tableViewController id="q0I-et-KSi" customClass="ItemTableViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ce5-07-8Jb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IuY-em-XLn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="IuY-em-XLn" customClass="ItemTableViewCell" customModule="TestApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IuY-em-XLn" id="l7O-9x-rhx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAT-fX-P77">
+                                            <rect key="frame" x="20" y="35" width="271" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="bAT-fX-P77" id="bLi-I9-DaR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -85,10 +89,35 @@
                             <outlet property="delegate" destination="q0I-et-KSi" id="42I-0h-P3K"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="ToDo Items" id="0zy-wp-iyq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oao-5k-Pyh">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="p03-8m-B09"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANc-EJ-GoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="124"/>
+            <point key="canvasLocation" x="577" y="74"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Hz-Ay-8BL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BJe-tr-RgG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fAs-dP-OgW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q0I-et-KSi" kind="relationship" relationship="rootViewController" id="I1G-qm-SMb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fmr-jA-wYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233.33333333333334" y="73.660714285714278"/>
         </scene>
     </scenes>
 </document>
