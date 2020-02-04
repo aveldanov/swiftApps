@@ -49,5 +49,4 @@ func flatArray(arr:[Any])->[Int]{
     return myFlattenedArray
 }
 
-
 print(flatArray(arr:[1,[2,[3]]]))
