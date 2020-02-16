@@ -22,9 +22,7 @@ struct Town{
     
     func fortify(){
         print("Defences Increased!")
-        
     }
-    
 }
 
 var newTown = Town(name: <#T##String#>, citizens: <#T##[String]#>, resources: <#T##[String : Int]#>)
