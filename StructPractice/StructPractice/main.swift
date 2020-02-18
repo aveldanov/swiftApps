@@ -23,8 +23,6 @@ struct Town{
     
 
     
-    
-    
     func fortify(){
         print("Defences Increased!")
     }
