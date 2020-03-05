@@ -19,6 +19,8 @@ struct Town{
         self.citizens = citizens
         self.resources = resources
     }
+    
+    
     func fortify(){
         print("Defences Increased!")
     }
