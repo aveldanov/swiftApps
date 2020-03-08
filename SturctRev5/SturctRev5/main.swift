@@ -24,6 +24,7 @@ struct Town{
 }
 
 
+
 var myTown = Town(name: "An", citizens: ["John"], resources: ["Coc":3])
 
 print(myTown.name)
