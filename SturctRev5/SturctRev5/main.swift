@@ -21,13 +21,18 @@ struct Town{
         self.citizens = citizens
         self.resources = resources
     }
+    
+    mutating func harvestRice(){
+        
+        resources["Rice"] = 100
+    }
 }
 
 
 
 var myTown = Town(name: "An", citizens: ["John"], resources: ["Coc":3])
-
-print(myTown.name)
+myTown.harvestRice()
+print(myTown)
 
 
 
