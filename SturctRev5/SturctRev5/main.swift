@@ -29,7 +29,6 @@ struct Town{
 }
 
 
-
 var myTown = Town(name: "An", citizens: ["John"], resources: ["Coc":3])
 myTown.harvestRice()
 print(myTown)
