@@ -16,11 +16,14 @@ struct Town{
     func fortify(){
         print("Defences increased")
     }
-    init(name:String,citizens:[String], resources:[String:Int]) {
-        self.name = name
-        self.citizens = citizens
-        self.resources = resources
-    }
+    
+// Init() is optional for Struct
+    
+//    init(name:String,citizens:[String], resources:[String:Int]) {
+//        self.name = name
+//        self.citizens = citizens
+//        self.resources = resources
+//    }
     
     mutating func harvestRice(){
         
