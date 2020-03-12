@@ -8,19 +8,38 @@
 
 
 
-let myOptional: String?
+//let myOptional: String?
+//
+//myOptional = nil
+//if myOptional != nil{
+//    let text:String = myOptional!
+//    let text2:String = myOptional!
+//}
+//
+//
+//if let safeOptional = myOptional ?? "NOPE"{ //binds(equals) only if it is not NIL!!!
+//    let text:String = safeOptional
+//    let text2:String = safeOptional
+//    print(safeOptional)
+//}else{
+//    print("Nil")
+//}
 
-myOptional = "Anton"
-if myOptional != nil{
-    let text:String = myOptional!
-    let text2:String = myOptional!
+//let text:String = myOptional ?? "NOPE"
+//print(text)
+
+
+struct MyOptional {
+    var property = 123
+    func method(){
+        print("printing")
+    }
 }
 
 
-if let safeOptional = myOptional ?? "NOPE"{ //binds(equals) only if it is not NIL!!!
-    let text:String = safeOptional
-    let text2:String = safeOptional
-    print(safeOptional)
-}else{
-    print("Nil")
-}
+let myOptional: MyOptional?
+
+myOptional = nil
+
+
+print(myOptional?.property)
