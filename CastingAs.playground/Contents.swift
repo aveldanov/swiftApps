@@ -28,7 +28,6 @@ let neighbours:[AnyObject] = [anton, jack, nemo, num]
 
 
 
-
 // IS allows to check an object DataType
 //if neighbours[0] is Human{
 //    print("Neighbour is human")
